@@ -2,7 +2,8 @@
 
 👋 Welcome to the **IMDb-Like Web Application Performance and Scalability Analysis** project! This system was developed to analyze, test, and optimize the performance of a web application resembling Amazon's IMDb platform.
 
-![image](https://github.com/user-attachments/assets/687d8554-9056-494b-a055-0b026723db9d)
+![image](https://github.com/user-attachments/assets/a98f092c-ae34-423e-bde3-65f661d1d7ec)
+
 
 ---
 
