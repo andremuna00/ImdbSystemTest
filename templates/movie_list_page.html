@@ -1,0 +1,22 @@
+{% block content %}    
+    <div class="container">
+        {%if is_empty %}
+            <p>No movie found</p>
+        {%else%}
+            Movie list is:
+            <ul>
+            {% for tconst in movie_list.tconst%}
+                <li>
+                    <b>Title:</b> {{movie_list.primaryTitle[loop.index-1]}}<br>
+                    <b>Original title:</b> {{movie_list.originalTitle[loop.index-1]}}<br>
+                    <b>Media type:</b> {{movie_list.titleType[loop.index-1]}}<br>
+                    <b>Release year:</b> <small>{{movie_list.startYear[loop.index-1]}}</small><br>
+                    <b>Duration:</b> <small>{{movie_list.runtimeMinutes[loop.index-1]}} minutes</small><br>
+                    <a href="/movies/{{movie_list.tconst[loop.index-1]}}">More details</a>
+                </li><br>
+            
+            {%endfor%}
+            </ul>
+        {%endif%}
+    </div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% block content %}
+    <div class="container">
+        <h1>Welcome to IMDb system test application!</h1>
+
+        <div>
+            <h2>Start by searching something...</h2>
+            <form name="movies" action="/movies" method="POST">
+                <label for="title_textbox"></label><br>
+                <input name="title_textbox" type="text">
+                <input value="Search" type="submit" name="submit_btn">
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

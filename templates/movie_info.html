@@ -1,0 +1,50 @@
+{% block content %}
+    <div class="container">
+        {% for movie in movie_info.primaryTitle%}
+            <h1>Movie title: {{movie_info.primaryTitle[loop.index-1]}}</h1>
+            <div>Average rating: {{movie_info.averageRating[loop.index-1]}} with {{movie_info.numVotes[loop.index-1]}} votes</div>
+            <div>Runtime minutes: {{movie_info.runtimeMinutes[loop.index-1]}}</div>
+        {%endfor%}
+        
+        {%if cast_list_info%}
+        <h2>Cast</h2>
+        <ul>
+        {% for cast in cast_list_info.primaryName%}
+            <li>
+                <b>Name: </b>{{cast_list_info.primaryName[loop.index-1]}}<br>
+                <b>Category: </b>{{cast_list_info.category[loop.index-1]}}<br>
+                {% if cast_list_info.characters[loop.index-1] != None%}
+                    <b>Characters: </b>  {{cast_list_info.characters[loop.index-1]}}
+                {%endif%}
+            </li><br>
+        {%endfor%}
+        </ul>
+        {%endif%}
+
+        {%if directors_list_info %}
+        <h2>Directors</h2>
+        <ul>
+        {% for director in directors_list_info.primaryName%}
+            <li>
+                <b>Name: </b>{{directors_list_info.primaryName[loop.index-1]}}<br>
+                <b>Primary Profession: </b>{{directors_list_info.primaryProfession[loop.index-1]}}<br>
+            </li><br>
+        {%endfor%}
+        </ul>
+        {%endif%}
+
+        {%if writers_list_info %}
+        <h2>Writers</h2>
+        <ul>
+        {% for writer in writers_list_info.primaryName%}
+            <li>
+                <b>Name: </b>{{writers_list_info.primaryName[loop.index-1]}}<br>
+                <b>Primary Profession: </b>{{writers_list_info.primaryProfession[loop.index-1]}}<br>
+            </li><br>
+        {%endfor%}
+        </ul>
+        {%endif%}
+
+        <!-- cast_list_info  directors_list_info  writers_list_info -->
+    </div>
+{% endblock %}
